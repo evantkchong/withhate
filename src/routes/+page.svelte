@@ -1,5 +1,7 @@
 <script>
 	import { onMount } from 'svelte';
+	import { browser } from '$app/environment';
+
 
 	// Inspired by https://dev.to/bryce/dvd-corner-bounces-but-more-satisfying-1355
 
@@ -7,9 +9,7 @@
 	let top = 0;
 	let logoWidth = 256;
 	let logoHeight = 130;
-
-
-
+	let formWidth = 700;
 	let color = {
 		r: 255,
 		g: 0,
@@ -35,6 +35,15 @@
 		}
 		startMoving();
 	});
+
+    const updateWindowSize = () =>{
+        formWidth = window.innerWidth < 700 ? window.innerWidth - 5 : 700;
+    }
+    if (browser){
+        updateWindowSize() // to set the initial window size
+        window.onresize = updateWindowSize; // run when ever the window size change
+
+    }
 
 	const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
@@ -115,16 +124,18 @@
 
 <div id="parent" style="display:flex; flex-direction: column; align-items: center;">
 	<div style="display:flex; flex-direction: column; width: fit-content;">
-		<div style="text-align: left;">
-			<h1>WithHate😡</h1>
-			<p>My Birthday!</p>
+		<div style="display:flex; align-items: center; justify-content: center;">
+			<div style="width: 90%">
+				<h1 class="rainbow rainbow_text_animated">h8</h1>
+				<p>My Birthday!</p>
+			</div>
 		</div>
 		<div>
 			<iframe
 				title="Google Form"
 				src="https://docs.google.com/forms/d/e/1FAIpQLScRRVBIzvkejrjBIJFx2PR7q7n2F5vq1x32BHrduWdWws0Isw/viewform?embedded=true"
-				width="700px"
-				height="1200px"
+				width="{formWidth}"
+				height="1300px"
 				frameborder="0"
 				marginheight="0"
 				marginwidth="0">Loading…</iframe
@@ -159,6 +170,37 @@
 		display: flex;
 		flex-flow: row;
 		justify-content: center;
+	}
+
+	.rainbow_text_animated {
+		background: linear-gradient(to right, #B2A4FF, #BBE9FF , #BAE5E5, #FFB4B4, #B2A4FF);
+		-webkit-background-clip: text;
+		background-clip: text;
+		color: transparent;
+		animation: rainbow_animation 2s ease-in-out infinite;
+		background-size: 400% 100%;
+	}
+
+	@keyframes rainbow_animation {
+		0%,100% {
+			background-position: 0 0;
+		}
+
+		50% {
+			background-position: 100% 0;
+		}
+	}
+
+	h1 {
+		font-family: "Ramilas";
+		color: white;
+		font-size: 60px;
+		font-style: italic;
+	}
+
+	@font-face {
+		font-family: 'Ramilas';
+		src: url("./tt-ramilas-trial.ttf")
 	}
 
 	#DVD {
