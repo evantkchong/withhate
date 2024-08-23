@@ -39,6 +39,10 @@
 		b = randomBetween(0, 255);
 	}
 
+	function newSpeed() {
+		speed =  randomBetween(4, 20);
+	}
+
 	function move() {
 		let { x, y } = direction;
 
@@ -56,14 +60,17 @@
 
 			newLeft = left + x * speed;
 			newTop = top + y * speed;
+			newSpeed()
 		} else if (hitX) {
 			newColor()
 			x *= -1;
 			newLeft = left + x * speed;
+			newSpeed()
 		} else if (hitY) {
 			newColor()
 			y *= -1;
 			newTop = top + y * speed;
+			newSpeed()
 		}
 
 		if (hitX || hitY) {
