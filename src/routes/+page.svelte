@@ -86,21 +86,23 @@
 	</div>
 </div>
 
-<header>
-	<h1>WithHate😡</h1>
-	<p>My Birthday!</p>
-</header>
 
-<div id="parent" style="display:flex; flex-direction: row; height:100%;">
-	<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScRRVBIzvkejrjBIJFx2PR7q7n2F5vq1x32BHrduWdWws0Isw/viewform?embedded=true" width="640" height="1400" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+
+<div id="parent" style="display:flex; flex-direction: column; align-items: center;">
+	<header>
+		<h1>WithHate😡</h1>
+		<p>My Birthday!</p>
+	</header>
+	<div>
+		<iframe src="https://docs.google.com/forms/d/e/1FAIpQLScRRVBIzvkejrjBIJFx2PR7q7n2F5vq1x32BHrduWdWws0Isw/viewform?embedded=true" width="640" height="1200" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+	</div>
+	<footer>
+		<img src='https://images.neopets.com/template_images/zafara_blue_bounce.gif'>
+		<img src='https://images.neopets.com/template_images/zafara_blue_bounce.gif'>
+		<img src='https://images.neopets.com/template_images/zafara_blue_bounce.gif'>
+	</footer>
 </div>
 
-<footer>
-	<img src='https://images.neopets.com/template_images/zafara_blue_bounce.gif'>
-	<img src='https://images.neopets.com/template_images/zafara_blue_bounce.gif'>
-	<img src='https://images.neopets.com/template_images/zafara_blue_bounce.gif'>
-
-</footer>
 
 
 <style>
