@@ -7,13 +7,19 @@
 	let top = 0;
 	let logoWidth = 256;
 	let logoHeight = 130;
-	let r = 255;
-	let g = 0;
-	let b = 0;
+
+
+
+	let color = {
+		r: 255,
+		g: 0,
+		b: 0,
+	}
+
 	// These control the movement of the logo
 	$: leftPx = `${left}px`;
 	$: topPx = `${top}px`;
-	$: dvdFill = `rgb(${r},${g},${b})`;
+	$: dvdFill = `rgb(${color.r},${color.g},${color.b})`;
 
 	let looper;
 	let speed = 8;
@@ -33,9 +39,9 @@
 	const randomBetween = (min, max) => min + Math.floor(Math.random() * (max - min + 1));
 
 	function newColor() {
-		r = randomBetween(0, 255);
-		g = randomBetween(0, 255);
-		b = randomBetween(0, 255);
+		color.r = randomBetween(0, 255);
+		color.g = randomBetween(0, 255);
+		color.b = randomBetween(0, 255);
 	}
 
 	function newSpeed() {
