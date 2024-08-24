@@ -213,11 +213,8 @@
 		}
 	}
 
-	h1 {
-		font-family: 'Ramilas';
-		color: white;
-		font-size: 60px;
-		font-style: italic;
+	p {
+		font-size: 18px;
 	}
 
 	@font-face {
